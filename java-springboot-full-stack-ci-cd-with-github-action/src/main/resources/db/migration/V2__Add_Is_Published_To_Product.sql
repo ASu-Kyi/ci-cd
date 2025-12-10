@@ -1,2 +1,0 @@
-ALTER TABLE product
-ADD COLUMN is_published BOOLEAN DEFAULT TRUE;
