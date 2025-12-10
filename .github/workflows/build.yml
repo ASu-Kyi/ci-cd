@@ -1,17 +1,24 @@
-name: My First Workflow
+name: Build workflow
 
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  myFirstJob:
+  build:
     runs-on: windows-latest
 
     steps:
-      - name: My First Action
-        uses: actions/checkout@v6
-      - name: My First Step
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Test
         run: |
-          Get-ChildItem Env:
+          Write-Output "Amigoscodes"
+          "Hello" | Out-File -FilePath file.txt
+          Get-ChildItem
+          Get-Content file.txt
