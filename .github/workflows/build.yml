@@ -1,12 +1,17 @@
-name: Build workflow
+name: My First Workflow
+
 on:
-  pull_request:
+  push:
     branches:
       - main
+
 jobs:
-  build:
+  myFirstJob:
     runs-on: windows-latest
+
     steps:
-      - name: Test
+      - name: My First Action
+        uses: actions/checkout@v6
+      - name: My First Step
         run: |
-          Write-Output "Amigoscodes"
+          Get-ChildItem Env:
