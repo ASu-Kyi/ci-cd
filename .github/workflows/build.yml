@@ -1,0 +1,12 @@
+name: Build workflow
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Test
+        run: |
+          Write-Output "Amigoscodes"
