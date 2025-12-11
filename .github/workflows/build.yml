@@ -22,8 +22,4 @@ jobs:
           java-version: '21'
       - name: Maven -B -ntp Clean Verify
         run: mvn clean verify
-      - name: Test
-        run: |
-          Write-Output "Amigoscodes"
-          "Hello" | Out-File -FilePath file.txt
-          Get-ChildItem
+        working-directory: ./java-springboot-full-stack-ci-cd-with-github-action
