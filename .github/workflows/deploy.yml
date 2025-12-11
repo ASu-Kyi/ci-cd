@@ -19,7 +19,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-      - name: Generate Build Number
+      - name: Generate Build Numbers
         run: |
           BUILD_NUMBER=$(date +'%d%m%Y%H%M%S')
           echo "BUILD_NUMBER=$BUILD_NUMBER" >> $GITHUB_ENV
