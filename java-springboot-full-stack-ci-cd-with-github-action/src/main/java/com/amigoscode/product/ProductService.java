@@ -57,8 +57,7 @@ public class ProductService {
     Function<Product, ProductResponse> mapToResponse() {
         return p -> new ProductResponse(
                 p.getId(),
-                //p.getName(),
-                "foo",
+                p.getName(),
                 p.getDescription(),
                 p.getPrice(),
                 p.getImageUrl(),
