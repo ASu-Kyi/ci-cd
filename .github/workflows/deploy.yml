@@ -1,0 +1,30 @@
+name: Build workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      - name: Generate Build Number
+        run: |
+          BUILD_NUMBER=$(date + '%d%m%Y%H%M%S')
+          echo "BUILD_NUMBER=$BUILD_NUMBER" >> $GITHUB_ENV
+          echo "Generated Build Number: $BUILD_NUMBER"
+      - name: Maven -B -ntp Clean Verify
+        run: mvn clean verify jib:build\
+          -Ddocker.image.tag=12345
+        working-directory: ./java-springboot-full-stack-ci-cd-with-github-action
