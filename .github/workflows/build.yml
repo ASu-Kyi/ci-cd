@@ -18,9 +18,9 @@ jobs:
       - name: JDK
         uses: actions/setup-java@v4
         with:
-          distribution: 'termurin'
+          distribution: 'temurin'
           java-version: '21'
-      - name: Maven -B -ntb Clean Verify
+      - name: Maven -B -ntp Clean Verify
         run: mvn clean verify
       - name: Test
         run: |
