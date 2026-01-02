@@ -10,7 +10,7 @@ services:
         SPRING_DATASOURCE_USERNAME: postgres
         SPRING_DATASOURCE_PASSWORD: root
       ports:
-        - "8090:8080"
+        - "3030:8080"
       networks:
         - amigos
   db:

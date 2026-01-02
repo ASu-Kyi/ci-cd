@@ -146,7 +146,8 @@ public class ProductIT extends AbstractTestConfig {
                 .isEqualTo(
                         new ProductResponse(
                                 laptopId,
-                                laptop.name(),
+                               // laptop.name(),
+                                "foo",
                                 laptop.description(),
                                 laptop.price(),
                                 laptop.imageUrl(),
