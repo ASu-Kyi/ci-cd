@@ -13,10 +13,10 @@ public class SharedPostgresContainer extends PostgreSQLContainer<SharedPostgresC
     public SharedPostgresContainer(DockerImageName dockerImageName) {
         super(dockerImageName);
         this.withReuse(true)
-                .withUsername("amigoscode")
-                .withDatabaseName("amigos")
-                .withLabel("name", "amigscode")
-                .withPassword("password");
+                .withUsername("postgres")
+                .withDatabaseName("test")
+                .withLabel("name", "asukyi")
+                .withPassword("root");
     }
 
     public static SharedPostgresContainer getInstance() {
