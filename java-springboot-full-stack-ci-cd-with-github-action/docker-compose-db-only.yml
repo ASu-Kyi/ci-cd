@@ -3,14 +3,14 @@ services:
     container_name: jfs-postgres-local
     image: postgres
     environment:
-      POSTGRES_USER: amigoscode
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgers
+      POSTGRES_PASSWORD: root
       POSTGRES_DB: jfs
     ports:
       - "5333:5432"
     restart: unless-stopped
     volumes:
-      - db-local:/data/postgres
+      - db:/var/lib/postgresql/data
     networks:
       - amigos
 
