@@ -1,14 +1,14 @@
 services:
   product-service:
-      container_name: product
+      container_name: product-service
 #      image: amigoscode/product-service:jibMaven
       build:
         context: .
         dockerfile: Dockerfile
       environment:
         SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/jfs
-        SPRING_DATASOURCE_USERNAME: amigoscode
-        SPRING_DATASOURCE_PASSWORD: password
+        SPRING_DATASOURCE_USERNAME: postgres
+        SPRING_DATASOURCE_PASSWORD: root
       ports:
         - "8090:8080"
       networks:
@@ -24,7 +24,7 @@ services:
       - "5333:5432"
     restart: unless-stopped
     volumes:
-      - db:/data/postgres
+      - db:/var/lib/postgresql/data
     networks:
       - amigos
 
