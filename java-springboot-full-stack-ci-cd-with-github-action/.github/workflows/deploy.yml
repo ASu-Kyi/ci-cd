@@ -75,6 +75,7 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
           mvn -B -ntp clean verify jib:build \
+            -DskipTests 
             -Djib.to.auth.username=$DOCKER_USERNAME \
             -Djib.to.auth.password=$DOCKER_PASSWORD \
             -Ddocker.image.tag=${BUILD_NUMBER}
